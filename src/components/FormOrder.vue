@@ -29,7 +29,7 @@
       </form>
     </div>
   </section>
-  <div class="flex justify-center items-center mt-8">
+  <div class="flex justify-center items-center mt-8 px-4">
     <font-awesome-icon icon="volume-up" class="text-2xl mr-2"></font-awesome-icon>
     <!-- Ikon pengeras suara -->
     <p class="text-xl text-center text-white dark:text-gray-200">Bagi Yang Ingin Bergabung Sebagai Worker Dengan Kami Silahkan Isi Form dan Isi Deskripsi</p>
