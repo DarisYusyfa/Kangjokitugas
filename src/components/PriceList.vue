@@ -1,0 +1,53 @@
+<template>
+  <section id="pricelist" class="bg-gray-100 py-16 text-gray-800 dark:bg-gray-700 dark:text-gray-200 px-4">
+    <div class="container mx-auto text-center">
+      <h3 class="text-3xl font-semibold mb-8">Daftar Harga</h3>
+      <p class="mb-12 text-lg">Pilih paket yang sesuai dengan kebutuhan kamu. Semua layanan kami dirancang untuk membantu kamu menyelesaikan tugas dengan hasil terbaik!</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Paket 1 -->
+        <div class="bg-white shadow-md rounded-lg p-6 hover:scale-105 transform transition duration-300 dark:bg-gray-800">
+          <h4 class="text-xl font-semibold mb-4">Paket Basic</h4>
+          <p class="text-lg font-bold text-blue-600 mb-4 dark:text-blue-400">Rp 4000-8000</p>
+          <ul class="text-left space-y-2 mb-6">
+            <li>- Jasa Tulis Tugas dan Gambar</li>
+            <li>- Tugas Matapelajaran Teori</li>
+          </ul>
+          <button class="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-500 transition duration-300" @click="window.open('https://wa.me/nomor_telepon_anda', '_blank')">Pesan Sekarang</button>
+        </div>
+
+        <!-- Paket 2 -->
+        <div class="bg-white shadow-md rounded-lg p-6 hover:scale-105 transform transition duration-300 dark:bg-gray-800">
+          <h4 class="text-xl font-semibold mb-4">Paket Standard</h4>
+          <p class="text-lg font-bold text-blue-600 mb-4 dark:text-blue-400">Rp 5000-10.000</p>
+          <ul class="text-left space-y-2 mb-6">
+            <li>- Perbaikan Tugas Codingan/Pemrogramman</li>
+            <li>- Tugas Pemrograman Dasar</li>
+            <li>- Revisi 1 Kali</li>
+          </ul>
+          <button class="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-500 transition duration-300" @click="window.open('https://wa.me/nomor_telepon_anda', '_blank')">Pesan Sekarang</button>
+        </div>
+
+        <!-- Paket 3 -->
+        <div class="bg-white shadow-md rounded-lg p-6 hover:scale-105 transform transition duration-300 dark:bg-gray-800">
+          <h4 class="text-xl font-semibold mb-4">Paket Premium</h4>
+          <p class="text-lg font-bold text-blue-600 mb-4 dark:text-blue-400">Rp 10.000-15.000</p>
+          <ul class="text-left space-y-2 mb-6">
+            <li>- Terima Jadi Tugas Codingan</li>
+            <li>- Tugas Pemrograman Lanjutan/Expert</li>
+            <li>- Revisi Tak Terbatas</li>
+          </ul>
+          <button class="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-500 transition duration-300" @click="window.open('https://wa.me/nomor_telepon_anda', '_blank')">Pesan Sekarang</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup>
+// Tidak ada script khusus yang diperlukan saat ini
+</script>
+
+<style scoped>
+/* Tambahkan styling tambahan jika diperlukan */
+</style>
