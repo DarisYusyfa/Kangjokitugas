@@ -12,12 +12,16 @@
 
         <div class="mb-4">
           <label for="email" class="block text-left text-lg mb-2">Email</label>
-          <input type="email" id="email" name="email" required class="w-full p-2 border rounded dark:bg-gray-700 dark:text-gray-200" placeholder="Masukkan email" />
+          <input type="email" id="email" v-model="email" required class="w-full p-2 border rounded dark:bg-gray-700 dark:text-gray-200" placeholder="Masukkan email" />
+          <span v-if="emailError" class="text-red-500 text-sm">{{ emailError }}</span>
+          <!-- Menampilkan error email -->
         </div>
 
         <div class="mb-4">
           <label for="phone" class="block text-left text-lg mb-2">Nomor Telepon</label>
-          <input type="tel" id="phone" name="phone" required class="w-full p-2 border rounded dark:bg-gray-700 dark:text-gray-200" placeholder="Masukkan nomor telepon" />
+          <input type="tel" id="phone" v-model="phone" required class="w-full p-2 border rounded dark:bg-gray-700 dark:text-gray-200" placeholder="Masukkan nomor telepon" />
+          <span v-if="phoneError" class="text-red-500 text-sm">{{ phoneError }}</span>
+          <!-- Menampilkan error telepon -->
         </div>
 
         <div class="mb-4">
@@ -29,15 +33,60 @@
       </form>
     </div>
   </section>
-  <div class="flex justify-center items-center mt-8 px-4">
-    <font-awesome-icon icon="volume-up" class="text-2xl mr-2"></font-awesome-icon>
-    <!-- Ikon pengeras suara -->
-    <p class="text-xl text-center text-white dark:text-gray-200">Bagi Yang Ingin Bergabung Sebagai Worker Dengan Kami Silahkan Isi Form dan Isi Deskripsi</p>
-  </div>
 </template>
 
 <script setup>
-// Tidak perlu menambahkan script setup lagi untuk ikon di sini
+import { ref } from 'vue';
+import emailjs from 'emailjs-com';
+
+const email = ref('');
+const phone = ref('');
+const emailError = ref('');
+const phoneError = ref('');
+
+const validateEmail = (email) => {
+  const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return re.test(email);
+};
+
+const validatePhone = (phone) => {
+  const re = /^\+?[1-9]\d{1,14}$/; // Contoh regex untuk nomor telepon internasional
+  return re.test(phone);
+};
+
+const sendEmail = (e) => {
+  e.preventDefault();
+
+  emailError.value = '';
+  phoneError.value = '';
+
+  // Validasi email
+  if (!validateEmail(email.value)) {
+    emailError.value = 'Format email tidak valid.';
+    return;
+  }
+
+  // Validasi nomor telepon
+  if (!validatePhone(phone.value)) {
+    phoneError.value = 'Format nomor telepon tidak valid.';
+    return;
+  }
+
+  emailjs
+    .sendForm('service_w71c4ct', 'template_3rjr2xc', e.target, 'LJee1kFw8oJVWPCAH')
+    .then((result) => {
+      console.log('Email berhasil dikirim:', result.text);
+      alert('Pesanan berhasil dikirim!');
+      // Reset form jika perlu
+      e.target.reset();
+      email.value = '';
+      phone.value = '';
+    })
+    .catch((error) => {
+      console.log('Gagal mengirim email:', error.text);
+      alert('Gagal mengirim pesanan. Coba lagi.');
+    });
+};
 </script>
 
 <style scoped>

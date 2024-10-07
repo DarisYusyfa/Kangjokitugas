@@ -25,6 +25,13 @@
 
     <!-- Form Pemesanan Section -->
     <FormOrder />
+
+    <!-- Peringatan Bergabung -->
+    <div class="flex justify-center items-center mt-8 px-3">
+      <font-awesome-icon icon="volume-up" class="text-2xl mr-2 dark:text-white text-darkblue"></font-awesome-icon>
+      <!-- Ikon pengeras suara -->
+      <p class="text-xl text-center text-white dark:text-gray-200">Bagi Yang Ingin Bergabung Sebagai Worker Dengan Kami Silahkan Isi Form Dengan Isi Deskripsi</p>
+    </div>
   </div>
 </template>
 
@@ -39,4 +46,7 @@ import FormOrder from '../components/FormOrder.vue'; // Impor FormOrder
 
 <style scoped>
 /* Tambahkan styling tambahan jika diperlukan */
+.text-darkblue {
+  color: black; /* Ganti dengan kode warna biru gelap yang Anda inginkan */
+}
 </style>

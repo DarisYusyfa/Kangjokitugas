@@ -6,7 +6,7 @@ import './index.css'; // Pastikan file ini ada di folder src
 // Import Font Awesome
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { fas } from '@fortawesome/free-solid-svg-icons'; // Impor semua ikon solid
+import { fas } from '@fortawesome/free-solid-svg-icons';
 
 // Tambahkan ikon ke library
 library.add(fas);
