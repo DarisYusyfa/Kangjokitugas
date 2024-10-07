@@ -21,9 +21,13 @@
         <!-- Paket 2 -->
         <div class="bg-white shadow-md rounded-lg p-6 hover:scale-105 transform transition duration-300 dark:bg-gray-800">
           <h4 class="text-xl font-semibold mb-4">Paket Standard</h4>
-          <p class="text-lg font-bold text-blue-600 mb-4 dark:text-blue-400">Rp 5000-10.000</p>
+          <p class="text-lg font-bold text-blue-600 mb-2 dark:text-blue-400">Rp 5000-10.000</p>
+          <p class="text-sm line-through text-gray-500 dark:text-gray-400">Rp 6000-12.000</p>
+          <!-- Harga asli dengan garis tengah -->
+          <span class="text-lg font-bold text-red-600 mb-4 dark:text-red-400">Diskon 20%!</span>
+          <!-- Teks diskon -->
           <ul class="text-left space-y-2 mb-6">
-            <li>- Perbaikan Tugas Codingan/Pemrogramman</li>
+            <li>- Perbaikan Tugas Codingan</li>
             <li>- Tugas Pemrograman Dasar</li>
             <li>- Revisi 1 Kali</li>
           </ul>
@@ -35,7 +39,7 @@
         <!-- Paket 3 -->
         <div class="bg-white shadow-md rounded-lg p-6 hover:scale-105 transform transition duration-300 dark:bg-gray-800">
           <h4 class="text-xl font-semibold mb-4">Paket Premium</h4>
-          <p class="text-lg font-bold text-blue-600 mb-4 dark:text-blue-400">Rp 10.000-15.000</p>
+          <p class="text-lg font-bold text-blue-600 mb-4 dark:text-blue-400">Rp 13.000-15.000</p>
           <ul class="text-left space-y-2 mb-6">
             <li>- Terima Jadi Tugas Codingan</li>
             <li>- Tugas Pemrograman Lanjutan/Expert</li>

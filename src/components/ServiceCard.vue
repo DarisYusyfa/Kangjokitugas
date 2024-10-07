@@ -9,7 +9,7 @@
             <p>Selesaikan makalah dengan struktur yang baik dan sumber terpercaya.</p>
           </div>
           <div class="bg-white shadow-md rounded-lg p-6 hover:bg-blue-600 hover:text-white hover:scale-105 transform transition duration-300 dark:bg-gray-800">
-            <h4 class="text-xl font-semibold mb-4">Pembuatan Tugas Pemerograman/Coding</h4>
+            <h4 class="text-xl font-semibold mb-4">Pembuatan Tugas Pemerograman</h4>
             <p>Codingan yang rapih dan output yang menarik serta bermanfaat.</p>
           </div>
           <div class="bg-white shadow-md rounded-lg p-6 hover:bg-blue-600 hover:text-white hover:scale-105 transform transition duration-300 dark:bg-gray-800">
