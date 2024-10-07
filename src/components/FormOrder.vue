@@ -4,7 +4,7 @@
       <h3 class="text-3xl font-semibold mb-8">Form Pemesanan</h3>
       <p class="mb-12 text-lg">Isi formulir di bawah ini untuk memesan layanan kami. Kami akan segera menghubungi Anda!</p>
 
-      <form class="max-w-xl mx-auto bg-white shadow-md rounded-lg p-8 dark:bg-gray-800" @submit="sendEmail">
+      <form class="max-w-xl mx-auto bg-white shadow-md rounded-lg p-8 dark:bg-gray-800" @submit="handleFormSubmit">
         <div class="mb-4">
           <label for="name" class="block text-left text-lg mb-2">Nama Lengkap</label>
           <input type="text" id="name" name="name" required class="w-full p-2 border rounded dark:bg-gray-700 dark:text-gray-200" placeholder="Masukkan nama lengkap" />
@@ -12,16 +12,14 @@
 
         <div class="mb-4">
           <label for="email" class="block text-left text-lg mb-2">Email</label>
-          <input type="email" id="email" v-model="email" required class="w-full p-2 border rounded dark:bg-gray-700 dark:text-gray-200" placeholder="Masukkan email" />
+          <input type="email" id="email" name="email" required class="w-full p-2 border rounded dark:bg-gray-700 dark:text-gray-200" placeholder="Masukkan email" />
           <span v-if="emailError" class="text-red-500 text-sm">{{ emailError }}</span>
-          <!-- Menampilkan error email -->
         </div>
 
         <div class="mb-4">
           <label for="phone" class="block text-left text-lg mb-2">Nomor Telepon</label>
-          <input type="tel" id="phone" v-model="phone" required class="w-full p-2 border rounded dark:bg-gray-700 dark:text-gray-200" placeholder="Masukkan nomor telepon" />
+          <input type="tel" id="phone" name="phone" required class="w-full p-2 border rounded dark:bg-gray-700 dark:text-gray-200" placeholder="Masukkan nomor telepon" />
           <span v-if="phoneError" class="text-red-500 text-sm">{{ phoneError }}</span>
-          <!-- Menampilkan error telepon -->
         </div>
 
         <div class="mb-4">
@@ -38,9 +36,8 @@
 <script setup>
 import { ref } from 'vue';
 import emailjs from 'emailjs-com';
+import Swal from 'sweetalert2'; // Import SweetAlert2
 
-const email = ref('');
-const phone = ref('');
 const emailError = ref('');
 const phoneError = ref('');
 
@@ -50,41 +47,58 @@ const validateEmail = (email) => {
 };
 
 const validatePhone = (phone) => {
-  const re = /^\+?[1-9]\d{1,14}$/; // Contoh regex untuk nomor telepon internasional
+  if (!phone.startsWith('62') && !phone.startsWith('+62')) {
+    return false;
+  }
+  const re = /^\+?62\d{8,14}$/;
   return re.test(phone);
 };
 
-const sendEmail = (e) => {
+const handleFormSubmit = (e) => {
   e.preventDefault();
+
+  const form = e.target;
+  const email = form.email.value;
+  const phone = form.phone.value;
 
   emailError.value = '';
   phoneError.value = '';
 
-  // Validasi email
-  if (!validateEmail(email.value)) {
+  if (!validateEmail(email)) {
     emailError.value = 'Format email tidak valid.';
     return;
   }
 
-  // Validasi nomor telepon
-  if (!validatePhone(phone.value)) {
-    phoneError.value = 'Format nomor telepon tidak valid.';
+  if (!validatePhone(phone)) {
+    phoneError.value = 'Nomor telepon harus diawali dengan 62 atau +62.';
     return;
   }
 
   emailjs
-    .sendForm('service_w71c4ct', 'template_3rjr2xc', e.target, 'LJee1kFw8oJVWPCAH')
+    .sendForm('service_w71c4ct', 'template_3rjr2xc', form, 'LJee1kFw8oJVWPCAH')
     .then((result) => {
       console.log('Email berhasil dikirim:', result.text);
-      alert('Pesanan berhasil dikirim!');
-      // Reset form jika perlu
-      e.target.reset();
-      email.value = '';
-      phone.value = '';
+
+      // Menampilkan SweetAlert
+      Swal.fire({
+        title: 'Pesanan Berhasil Dikirim!',
+        text: 'Kami akan segera menghubungi Anda.',
+        icon: 'success',
+        confirmButtonText: 'Oke',
+      });
+
+      form.reset();
     })
     .catch((error) => {
       console.log('Gagal mengirim email:', error.text);
-      alert('Gagal mengirim pesanan. Coba lagi.');
+
+      // Menampilkan SweetAlert dengan pesan error
+      Swal.fire({
+        title: 'Gagal Mengirim Pesanan',
+        text: 'Coba lagi nanti.',
+        icon: 'error',
+        confirmButtonText: 'Oke',
+      });
     });
 };
 </script>

@@ -15,6 +15,7 @@
     "emailjs-com": "^3.2.0",
     "lottie-web": "^5.12.2",
     "marquee3000": "^1.1.1",
+    "sweetalert2": "^11.14.1",
     "vue": "^3.5.10",
     "vue-marquee-text-component": "^2.0.1",
     "vue-router": "^4.4.5"
