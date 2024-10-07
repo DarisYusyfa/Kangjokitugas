@@ -5,7 +5,9 @@
       <h2 class="text-5xl font-bold mb-4">Jasa Joki Tugas Sekolah Terpercaya</h2>
       <p class="text-2xl mb-8">Selesaikan tugas SMK kamu dengan cepat dan tepat!</p>
 
-      <button :class="isDarkMode ? 'text-gray-200' : 'text-black'" class="bg-blue-600 py-3 px-8 rounded hover:bg-blue-500 transition duration-300 text-lg" @click="window.open('https://wa.me/6285860639317', '_blank')">Pesan Sekarang</button>
+      <a :class="isDarkMode ? 'text-gray-200' : 'text-black'" href="https://wa.me/6285860639317" target="_blank" rel="noopener noreferrer">
+        <button class="bg-blue-600 py-3 px-8 rounded hover:bg-blue-500 transition duration-300 text-lg">Pesan Sekarang</button>
+      </a>
     </div>
 
     <!-- Sponsored by text and logos at the bottom -->

@@ -6,14 +6,14 @@
       <dotlottie-player src="/images/animation.json" background="transparent" speed="1" class="w-64 h-64 lg:w-[600px] lg:h-[600px]" loop autoplay></dotlottie-player>
 
       <!-- Diagram alur pemesanan -->
-      <div class="ml-0 lg:ml-40 mt-10 lg:mt-28 flex flex-col items-center lg:items-start">
+      <div class="ml-0 lg:ml-40 mt-10 lg:mt-32 flex flex-col items-center lg:items-start">
         <!-- Memperlebar margin kiri -->
         <!-- Menambah margin bawah -->
         <div class="flex flex-col items-center lg:items-start">
           <div class="flex items-center mb-8">
             <!-- Memperlebar jarak antar elemen -->
             <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-lg">1</div>
-            <span class="ml-6 lg:ml-10 text-lg lg:text-xl text-gray-800 dark:text-gray-200">Chat WA Admin</span>
+            <span class="ml-6 lg:ml-10 text-lg lg:text-xl text-gray-800 dark:text-gray-200">Chat WA Admin/Isi Form dibawah</span>
             <!-- Margin tambahan untuk desktop -->
           </div>
           <div class="flex items-center mb-8">

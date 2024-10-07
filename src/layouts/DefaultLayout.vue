@@ -1,5 +1,5 @@
 <template>
-  <div class="font-sans min-h-screen bg-gray-100 dark:bg-gray-900">
+  <div class="font-sans min-h-screen bg-gray-700 dark:bg-gray-900">
     <!-- Tambahkan kelas font-sans -->
     <Navbar />
     <router-view />
@@ -13,7 +13,6 @@ import Footer from '../components/Footer.vue';
 </script>
 
 <style scoped>
-/* Mengatur font default untuk seluruh teks di dalam layout ini */
 body {
   font-family: 'Poppins', sans-serif; /* Menggunakan Poppins */
 }

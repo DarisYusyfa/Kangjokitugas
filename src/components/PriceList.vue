@@ -13,7 +13,9 @@
             <li>- Jasa Tulis Tugas dan Gambar</li>
             <li>- Tugas Matapelajaran Teori</li>
           </ul>
-          <button class="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-500 transition duration-300" @click="window.open('https://wa.me/nomor_telepon_anda', '_blank')">Pesan Sekarang</button>
+          <a href="https://wa.me/6285860639317?text=Saya%20ingin%20pesan%20Paket%20Basic%20untuk%20joki%20tugas" target="_blank" rel="noopener noreferrer">
+            <button class="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-500 transition duration-300">Pesan Sekarang</button>
+          </a>
         </div>
 
         <!-- Paket 2 -->
@@ -25,7 +27,9 @@
             <li>- Tugas Pemrograman Dasar</li>
             <li>- Revisi 1 Kali</li>
           </ul>
-          <button class="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-500 transition duration-300" @click="window.open('https://wa.me/nomor_telepon_anda', '_blank')">Pesan Sekarang</button>
+          <a href="https://wa.me/6285860639317?text=Saya%20ingin%20pesan%20Paket%20Standard%20untuk%20joki%20tugas" target="_blank" rel="noopener noreferrer">
+            <button class="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-500 transition duration-300">Pesan Sekarang</button>
+          </a>
         </div>
 
         <!-- Paket 3 -->
@@ -37,7 +41,9 @@
             <li>- Tugas Pemrograman Lanjutan/Expert</li>
             <li>- Revisi Tak Terbatas</li>
           </ul>
-          <button class="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-500 transition duration-300" @click="window.open('https://wa.me/nomor_telepon_anda', '_blank')">Pesan Sekarang</button>
+          <a href="https://wa.me/6285860639317?text=Saya%20ingin%20pesan%20Paket%20Premium%20untuk%20joki%20tugas" target="_blank" rel="noopener noreferrer">
+            <button class="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-500 transition duration-300">Pesan Sekarang</button>
+          </a>
         </div>
       </div>
     </div>

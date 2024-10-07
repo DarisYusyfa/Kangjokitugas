@@ -17,7 +17,7 @@
       <ul class="hidden md:flex space-x-8 text-lg font-medium">
         <li><router-link to="/" class="hover:text-gray-300 transition duration-300 dark:hover:text-gray-400">Beranda</router-link></li>
         <li><router-link to="/services" class="hover:text-gray-300 transition duration-300 dark:hover:text-gray-400">Layanan</router-link></li>
-        <li><router-link to="/testimonials" class="hover:text-gray-300 transition duration-300 dark:hover:text-gray-400">Testimoni</router-link></li>
+        <li><router-link to="/testimoni" class="hover:text-gray-300 transition duration-300 dark:hover:text-gray-400">Testimoni</router-link></li>
         <li><router-link to="/contact" class="hover:text-gray-300 transition duration-300 dark:hover:text-gray-400">Kontak</router-link></li>
       </ul>
 
@@ -44,7 +44,7 @@
       <ul class="flex flex-col space-y-2 p-4">
         <li><router-link to="/" @click="toggleMenu" class="hover:text-gray-300">Beranda</router-link></li>
         <li><router-link to="/services" @click="toggleMenu" class="hover:text-gray-300">Layanan</router-link></li>
-        <li><router-link to="/testimonials" @click="toggleMenu" class="hover:text-gray-300">Testimoni</router-link></li>
+        <li><router-link to="/testimoni" @click="toggleMenu" class="hover:text-gray-300">Testimoni</router-link></li>
         <li><router-link to="/contact" @click="toggleMenu" class="hover:text-gray-300">Kontak</router-link></li>
       </ul>
     </div>

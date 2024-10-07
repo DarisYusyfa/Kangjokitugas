@@ -3,7 +3,7 @@ import DefaultLayout from '../layouts/DefaultLayout.vue';
 import Home from '../views/Home.vue';
 import Services from '../views/Services.vue';
 import Contact from '../views/Contact.vue';
-import Order from '../views/Order.vue';
+import Testimoni from '../views/Testimoni.vue';
 
 const routes = [
   {
@@ -13,7 +13,7 @@ const routes = [
       { path: '', component: Home },
       { path: 'services', component: Services },
       { path: 'contact', component: Contact },
-      { path: 'order', component: Order },
+      { path: 'testimoni', component: Testimoni },
     ],
   },
 ];
