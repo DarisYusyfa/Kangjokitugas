@@ -1,5 +1,4 @@
 <template>
-  <!-- Hero Section (Beranda) -->
   <section id="home" class="bg-gray-900 py-40 text-center relative overflow-hidden text-white dark:bg-gray-800 px-4">
     <div class="container mx-auto relative z-10">
       <h2 class="text-5xl font-bold mb-4">Jasa Joki Tugas Sekolah Terpercaya</h2>
@@ -10,7 +9,6 @@
       </a>
     </div>
 
-    <!-- Sponsored by text and logos at the bottom -->
     <div class="absolute inset-x-0 bottom-0 mb-0 flex flex-col items-center z-20 pb-6">
       <span class="text-sm mb-2">Sponsored by</span>
       <div class="flex justify-center">
@@ -23,15 +21,14 @@
       </div>
     </div>
 
-    <!-- Background Image -->
     <div class="absolute inset-0 bg-cover bg-center opacity-50 z-0" style="background-image: url('/images/bg.jpg')"></div>
   </section>
 </template>
 
 <script setup>
-// Tidak ada script tambahan di sini
+import { ref } from 'vue';
+
+const isDarkMode = ref(false);
 </script>
 
-<style scoped>
-/* Tambahkan styling jika diperlukan */
-</style>
+<style scoped></style>
