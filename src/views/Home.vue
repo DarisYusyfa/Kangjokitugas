@@ -30,7 +30,7 @@
     <div class="flex justify-center items-center mt-8 px-3">
       <font-awesome-icon icon="volume-up" class="text-2xl mr-2 dark:text-white text-darkblue"></font-awesome-icon>
       <div class="marquee">
-        <p class="text-xl text-center text-white dark:text-gray-200">Bagi Yang Ingin Bergabung Sebagai Worker Dengan Kami Silahkan Isi Form Dengan Isi Deskripsi</p>
+        <p class="text-xl text-center text-white dark:text-gray-200">Bagi Yang Ingin Bergabung Dengan Kami Sebagai Worker Silahkan Isi Form dan Deskripsi</p>
       </div>
     </div>
   </div>
@@ -41,8 +41,8 @@ import HeroSection from '../components/HeroSection.vue';
 import ServiceCard from '../components/ServiceCard.vue';
 import TestimonialSlide from '../components/TestimonialSlide.vue';
 import OrderFlow from '../components/OrderFlow.vue';
-import PriceList from '../components/PriceList.vue'; // Impor PriceList
-import FormOrder from '../components/FormOrder.vue'; // Impor FormOrder
+import PriceList from '../components/PriceList.vue';
+import FormOrder from '../components/FormOrder.vue';
 </script>
 
 <style scoped>

@@ -4,17 +4,28 @@
     <section id="layanan" class="bg-gray-100 py-16 text-gray-800 dark:bg-gray-700 dark:text-gray-200 px-4">
       <div class="container mx-auto text-center">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-white shadow-md rounded-lg p-6 hover:bg-blue-600 hover:text-white hover:scale-105 transform transition duration-300 dark:bg-gray-800">
-            <h4 class="text-xl font-semibold mb-4">Pembuatan Makalah</h4>
-            <p>Selesaikan makalah dengan struktur yang baik dan sumber terpercaya.</p>
+          <!-- Service 1 with AOS -->
+          <div data-aos="fade-left" data-aos-duration="500">
+            <div class="bg-white shadow-md rounded-lg p-6 hover:bg-blue-600 hover:text-white hover:scale-105 transform transition duration-300 dark:bg-gray-800">
+              <h4 class="text-xl font-semibold mb-4">Pembuatan Makalah</h4>
+              <p>Selesaikan makalah dengan struktur yang baik dan sumber terpercaya.</p>
+            </div>
           </div>
-          <div class="bg-white shadow-md rounded-lg p-6 hover:bg-blue-600 hover:text-white hover:scale-105 transform transition duration-300 dark:bg-gray-800">
-            <h4 class="text-xl font-semibold mb-4">Pembuatan Tugas Pemerograman</h4>
-            <p>Codingan yang rapih dan output yang menarik serta bermanfaat.</p>
+
+          <!-- Service 2 with AOS -->
+          <div data-aos="fade-left" data-aos-duration="700">
+            <div class="bg-white shadow-md rounded-lg p-6 hover:bg-blue-600 hover:text-white hover:scale-105 transform transition duration-300 dark:bg-gray-800">
+              <h4 class="text-xl font-semibold mb-4">Pembuatan Tugas Pemrograman</h4>
+              <p>Codingan yang rapih dan output yang menarik serta bermanfaat.</p>
+            </div>
           </div>
-          <div class="bg-white shadow-md rounded-lg p-6 hover:bg-blue-600 hover:text-white hover:scale-105 transform transition duration-300 dark:bg-gray-800">
-            <h4 class="text-xl font-semibold mb-4">Pengerjaan Tugas Matapelajaran</h4>
-            <p>Dapatkan solusi cepat dan akurat untuk tugas matapelajaran SMK kamu.</p>
+
+          <!-- Service 3 with AOS -->
+          <div data-aos="fade-left" data-aos-duration="900">
+            <div class="bg-white shadow-md rounded-lg p-6 hover:bg-blue-600 hover:text-white hover:scale-105 transform transition duration-300 dark:bg-gray-800">
+              <h4 class="text-xl font-semibold mb-4">Pengerjaan Tugas Matapelajaran</h4>
+              <p>Dapatkan solusi cepat dan akurat untuk tugas matapelajaran SMK kamu.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -70,9 +81,13 @@
 
 <script setup>
 import { onMounted } from 'vue';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 onMounted(() => {
-  // Initialize any necessary plugins or scripts
+  AOS.init({
+    duration: 800,
+  });
 });
 </script>
 

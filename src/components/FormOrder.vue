@@ -27,7 +27,7 @@
           <textarea id="message" name="message" rows="4" class="w-full p-2 border rounded dark:bg-gray-700 dark:text-gray-200" placeholder="Masukkan pesan atau keterangan"></textarea>
         </div>
 
-        <button type="submit" class="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-500 transition duration-300 w-full">Kirim Pesanan</button>
+        <button type="submit" class="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-500 transition duration-300 w-full">Kirim Pesan</button>
       </form>
     </div>
   </section>

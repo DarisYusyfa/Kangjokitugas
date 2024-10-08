@@ -14,6 +14,6 @@ import Footer from '../components/Footer.vue';
 
 <style scoped>
 body {
-  font-family: 'Poppins', sans-serif; /* Menggunakan Poppins */
+  font-family: 'Fredoka', sans-serif; /* Menggunakan Poppins */
 }
 </style>
