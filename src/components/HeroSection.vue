@@ -4,7 +4,7 @@
     <transition name="text-slide">
       <div v-if="showGreeting" class="absolute top-4 left-4 z-20 flex items-center space-x-2">
         <span class="text-lg font-bold">{{ greetingMessage }}</span>
-        <span class="text-2xl wave-hand">👋</span>
+        <span class="text-l wave-hand">👋</span>
       </div>
     </transition>
 

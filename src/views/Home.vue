@@ -43,10 +43,32 @@ import TestimonialSlide from '../components/TestimonialSlide.vue';
 import OrderFlow from '../components/OrderFlow.vue';
 import PriceList from '../components/PriceList.vue';
 import FormOrder from '../components/FormOrder.vue';
+
+// Tambahkan script Tawk.to di sini
+const tawkScript = `
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6706522e02d78d1a30eeb6fc/1i9ob21sb';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+  })();
+`;
+
+// Menjalankan script Tawk.to
+const runScript = () => {
+  const script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.innerHTML = tawkScript;
+  document.body.appendChild(script);
+};
+
+runScript();
 </script>
 
 <style scoped>
-/* Tambahkan styling tambahan jika diperlukan */
 .text-darkblue {
   color: black; /* Ganti dengan kode warna biru gelap yang Anda inginkan */
 }
