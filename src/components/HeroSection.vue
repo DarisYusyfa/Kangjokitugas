@@ -1,5 +1,13 @@
 <template>
-  <section id="home" class="bg-gray-900 py-40 text-center relative overflow-hidden text-white dark:bg-gray-800 px-4">
+  <section id="home" :class="isDarkMode ? 'bg-gray-900 text-white dark' : 'bg-white text-black'" class="py-40 text-center relative overflow-hidden px-4">
+    <!-- Teks greeting dan emoji lambaian di sebelah kiri atas -->
+    <transition name="text-slide">
+      <div v-if="showGreeting" class="absolute top-4 left-4 z-20 flex items-center space-x-2">
+        <span class="text-lg font-bold">{{ greetingMessage }}</span>
+        <span class="text-2xl wave-hand">👋</span>
+      </div>
+    </transition>
+
     <div class="container mx-auto relative z-10">
       <h2 class="text-5xl font-bold mb-4">Jasa Joki Tugas Sekolah Terpercaya</h2>
       <p class="text-2xl mb-8">Selesaikan tugas SMK kamu dengan cepat dan tepat!</p>
@@ -26,9 +34,104 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
-const isDarkMode = ref(false);
+// Dark mode state
+const isDarkMode = ref(true); // Set default to dark mode
+
+// Greeting message state
+const greetingMessage = ref('');
+const showGreeting = ref(true); // State for controlling visibility of greeting
+
+const setGreetingMessage = () => {
+  const now = new Date();
+  const hour = now.getHours();
+
+  if (hour >= 5 && hour < 12) {
+    greetingMessage.value = 'Hi, Selamat Pagi!';
+  } else if (hour >= 12 && hour < 15) {
+    greetingMessage.value = 'Hi, Selamat Siang!';
+  } else if (hour >= 15 && hour < 18) {
+    greetingMessage.value = 'Hi, Selamat Sore!';
+  } else {
+    greetingMessage.value = 'Hi, Selamat Malam!';
+  }
+};
+
+// Set dark mode preference and greeting message on mount
+onMounted(() => {
+  // Check if user has saved dark mode preference
+  const savedMode = localStorage.getItem('isDarkMode');
+
+  // If there is a saved preference, use it; otherwise, default to dark mode
+  if (savedMode !== null) {
+    isDarkMode.value = JSON.parse(savedMode);
+  } else {
+    isDarkMode.value = true; // Default to dark mode
+  }
+
+  setGreetingMessage();
+
+  // Hide greeting and emoji after 30 seconds
+  setTimeout(() => {
+    showGreeting.value = false;
+  }, 30000); // 30 seconds delay
+});
+
+// Function to toggle dark mode and save preference
+const toggleDarkMode = () => {
+  isDarkMode.value = !isDarkMode.value;
+  localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode.value));
+};
 </script>
 
-<style scoped></style>
+<style scoped>
+/* Animasi teks masuk dan keluar */
+.text-slide-enter-active,
+.text-slide-leave-active {
+  transition: all 0.5s ease-in-out;
+}
+
+.text-slide-enter {
+  opacity: 0;
+  transform: translateY(-20px); /* Slide in from above */
+}
+
+.text-slide-leave-to {
+  opacity: 0;
+  transform: translateY(20px); /* Slide out downward */
+}
+
+/* Animasi lambaian tangan */
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.wave-hand {
+  display: inline-block;
+  animation: wave 2s infinite ease-in-out; /* Tangan melambai setiap 2 detik secara terus menerus */
+}
+</style>

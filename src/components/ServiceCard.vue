@@ -62,7 +62,7 @@
         </div>
       </div>
       <div class="marquee-row">
-        <div class="marquee-content">
+        <div class="marquee-content marquee-content-slow">
           <div class="marquee-card">Garansi Kualitas</div>
           <div class="marquee-card">Support 24 Jam</div>
           <div class="marquee-card">Pengiriman Tepat Waktu</div>
@@ -139,5 +139,17 @@ onMounted(() => {
   to {
     transform: translateX(50%);
   }
+}
+@keyframes marquee-slow {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-content-slow {
+  animation: marquee-slow 35s linear infinite; /* Perpanjang durasi */
 }
 </style>

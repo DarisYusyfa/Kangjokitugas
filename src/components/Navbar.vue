@@ -2,9 +2,10 @@
   <header :class="{ dark: isDarkMode }" class="bg-gray-800 text-white py-2 px-4 shadow-md dark:bg-gray-900 sticky top-0 z-50">
     <nav class="container mx-auto flex justify-between items-center">
       <!-- Dark Mode Toggle Button (on mobile, move to left) -->
-      <button @click="toggleDarkMode" class="md:hidden">
-        <span v-if="isDarkMode" class="text-white text-2xl">🌙</span>
-        <span v-else class="text-gray-300 dark:text-yellow-400 text-2xl">🌞</span>
+      <button @click="toggleDarkMode" class="md:hidden flex items-center relative">
+        <span v-if="isDarkMode" class="text-gray-300 dark:text-yellow-400 text-2xl">🌞</span>
+        <span v-else class="text-white text-2xl">🌙</span>
+        <span class="absolute left-12 text-xs font-medium">{{ isDarkMode ? 'Light Mode' : 'Dark Mode' }}</span>
       </button>
 
       <!-- Logo (only visible on desktop) -->
@@ -22,10 +23,10 @@
       </ul>
 
       <!-- Dark Mode Toggle Button (on desktop) -->
-      <button @click="toggleDarkMode" class="hidden md:flex">
-        <span v-if="isDarkMode" class="text-white text-2xl">🌙</span>
-        <span v-else class="text-gray-300 dark:text-yellow-400 text-2xl">🌞</span>
-        <span class="ml-2 text-sm font-medium hidden lg:inline">Dark Mode</span>
+      <button @click="toggleDarkMode" class="hidden md:flex items-center">
+        <span v-if="isDarkMode" class="text-gray-300 dark:text-yellow-400 text-2xl">🌞</span>
+        <span v-else class="text-white text-2xl">🌙</span>
+        <span class="ml-2 text-sm font-medium hidden lg:inline">{{ isDarkMode ? 'Light Mode' : 'Dark Mode' }}</span>
       </button>
 
       <!-- Mobile Menu Button (Hamburger or X) -->
@@ -40,14 +41,16 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <div v-if="isMenuOpen" class="absolute top-full left-0 right-0 bg-gray-800 text-white md:hidden">
-      <ul class="flex flex-col space-y-2 p-4">
-        <li><router-link to="/" @click="toggleMenu" class="hover:text-gray-300">Beranda</router-link></li>
-        <li><router-link to="/services" @click="toggleMenu" class="hover:text-gray-300">Layanan</router-link></li>
-        <li><router-link to="/testimoni" @click="toggleMenu" class="hover:text-gray-300">Testimoni</router-link></li>
-        <li><router-link to="/contact" @click="toggleMenu" class="hover:text-gray-300">Kontak</router-link></li>
-      </ul>
-    </div>
+    <transition name="fade">
+      <div v-if="isMenuOpen" class="absolute top-full left-0 right-0 bg-gray-800 text-white md:hidden transition-all duration-300 transform" :class="{ 'scale-y-100': isMenuOpen, 'scale-y-0': !isMenuOpen }">
+        <ul class="flex flex-col space-y-2 p-4">
+          <li><router-link to="/" @click="toggleMenu" class="hover:text-gray-300">Beranda</router-link></li>
+          <li><router-link to="/services" @click="toggleMenu" class="hover:text-gray-300">Layanan</router-link></li>
+          <li><router-link to="/testimoni" @click="toggleMenu" class="hover:text-gray-300">Testimoni</router-link></li>
+          <li><router-link to="/contact" @click="toggleMenu" class="hover:text-gray-300">Kontak</router-link></li>
+        </ul>
+      </div>
+    </transition>
   </header>
 </template>
 
@@ -68,5 +71,18 @@ function toggleMenu() {
 </script>
 
 <style scoped>
-/* Tambahkan styling jika diperlukan */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0;
+}
+
+.scale-y-0 {
+  transform: scaleY(0);
+}
+.scale-y-100 {
+  transform: scaleY(1);
+}
 </style>
